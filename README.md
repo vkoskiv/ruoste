@@ -25,7 +25,7 @@ Here's an example of what can be achieved with ruoste:
 
 ```rust
 ruoste::ruoste! {
-    käytä std::collections::Dictionnaire kuin Käsky;
+    käytä std::collections::RisuaitaKartta kuin Käsky;
 
     piirre AvainArvo {
         funktio kirjoita(&itse, avain: Ketju, arvo: Ketju);
