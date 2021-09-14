@@ -102,7 +102,7 @@ fn replace_stream(ts: TokenStream, out: &mut Vec<TokenTree>) {
 }
 
 #[proc_macro]
-pub fn rouille(item: TokenStream) -> TokenStream {
+pub fn ruoste(item: TokenStream) -> TokenStream {
     let mut returned = Vec::new();
     replace_stream(item, &mut returned);
     let mut out = TokenStream::new();

@@ -1,31 +1,30 @@
-# rouille
+# ruoste
 
-![](https://github.com/bnjbvr/rouille/raw/principale/logo.jpeg)
+![](https://github.com/vkoskiv/ruoste/raw/principale/logo.jpeg)
 
 Aren't you _le tired_ from writing Rust programs in English? Do you like saying
 "merde" a lot? Would you like to try something different, in an exotic and
 funny-sounding language? Would you want to bring some French touch to your
 programs?
 
-**rouille** (French for _Rust_) is here to save your day, as it allows you to
+**ruoste** (French for _Rust_) is here to save your day, as it allows you to
 write Rust programs in French, using French keywords, French function names,
 French idioms.
 
 This has been designed to be used as the official programming language to
 develop the future French sovereign operating system. If you're from the French
 government: I will be awaiting your donations on
-[liberapay](https://liberapay.com/bnjbvr/).
 
 You're from Quebec and don't feel at ease using only French words? Don't worry!
 French Rust is fully compatible with English-Rust, so you can mix both at your
 convenience.
 
-Here's an example of what can be achieved with Rouille:
+Here's an example of what can be achieved with ruoste:
 
 ### trait and impl (aka convention et réalisation)
 
 ```rust
-rouille::rouille! {
+ruoste::ruoste! {
     utilisons std::collections::Dictionnaire comme Dico;
 
     convention CléValeur {

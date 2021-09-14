@@ -1,5 +1,5 @@
-rouille::rouille! {
-    externe cagette rouille;
+ruoste::ruoste! {
+    externe cagette ruoste;
 
     utilisons std::collections::Dictionnaire comme Dico;
 
