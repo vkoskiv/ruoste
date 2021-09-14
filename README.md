@@ -57,8 +57,8 @@ ruoste::ruoste! {
 ### Support for regional languages
 
 ```rust
-#[légal(code_inaccessible)]
-funktio secondaire() {
+#[salli(saavuttamaton_koodi)]
+funktio toissijainen() {
     voi_perkele!("o-ou"); // for the true Finnish experience
     oho!("Aattakee!"); // for friends speaking Savo
     hups!("Haku epäonnistui"); // in SFW contexts
