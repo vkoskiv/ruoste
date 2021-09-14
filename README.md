@@ -2,52 +2,52 @@
 
 ![](https://github.com/vkoskiv/ruoste/raw/principale/logo.jpeg)
 
-Aren't you _le tired_ from writing Rust programs in English? Do you like saying
-"merde" a lot? Would you like to try something different, in an exotic and
-funny-sounding language? Would you want to bring some French touch to your
+Aren't you tired from writing Rust programs in English? Do you like saying
+"perkele" a lot? Would you like to try something different, in an exotic and
+funny-sounding language? Would you want to bring some Finnish touch to your
 programs?
 
-**ruoste** (French for _Rust_) is here to save your day, as it allows you to
-write Rust programs in French, using French keywords, French function names,
-French idioms.
+**ruoste** (Finnish for _Rust_) is here to save your day, as it allows you to
+write Rust programs in Finnish, using Finnish keywords, Finnish function names, 
+and Finnish idioms.
 
 This has been designed to be used as the official programming language to
-develop the future French sovereign operating system. If you're from the French
-government: I will be awaiting your donations on
+develop the future Finnish sovereign operating system. If you're from the Finnish
+government: I will be awaiting your donations on [liberapay](https://liberapay.com/bnjbvr/)
 
-You're from Quebec and don't feel at ease using only French words? Don't worry!
-French Rust is fully compatible with English-Rust, so you can mix both at your
+You're from Jyväskylä and don't feel at ease using only Finnish words? Don't worry!
+Finnish Rust is fully compatible with English-Rust, so you can mix both at your
 convenience.
 
 Here's an example of what can be achieved with ruoste:
 
-### trait and impl (aka convention et réalisation)
+### trait and impl (aka piirre ja toteutus)
 
 ```rust
 ruoste::ruoste! {
-    utilisons std::collections::Dictionnaire comme Dico;
+    käytä std::collections::Dictionnaire kuin Käsky;
 
-    convention CléValeur {
-        fonction écrire(&soi, clé: Chaine, valeur: Chaine);
-        fonction lire(&soi, clé: Chaine) -> PeutÊtre<&Chaine>;
+    piirre AvainArvo {
+        funktio kirjoita(&itse, avain: Ketju, arvo: Ketju);
+        funktio lue(&itse, avain: Ketju) -> Mahdollisuus<&Ketju>;
     }
 
-    statique mutable DICTIONNAIRE: PeutÊtre<Dico<Chaine, Chaine>> = Rien;
+    staattinen muuttuva HAKEMISTO: Mahdollisuus<Käsky<Ketju, Ketju>> = EiMikään;
 
-    structure Concrète;
+    rakenne Betoni;
 
-    réalisation CléValeur pour Concrète {
-        fonction écrire(&soi, clé: Chaine, valeur: Chaine) {
-            soit dico = dangereux {
-                DICTIONNAIRE.prendre_ou_insérer_avec(Défaut::défaut)
+    toteutus AvainArvo kaikille Betoni {
+        funktio kirjoita(&itse, avain: Ketju, arvo: Ketju) {
+            olkoon käsky = turvaton {
+                HAKEMISTO.ota_tai_sijoita_käyttäen(Oletus::oletus)
             };
-            dico.insérer(clé, valeur);
+            käsky.sijoita(avain, arvo);
         }
-        fonction lire(&soi, clé: Chaine) -> Résultat<PeutÊtre<&Chaine>, Chaine> {
-            si soit Quelque(dico) = dangereux { DICTIONNAIRE.en_réf() } {
-                Bien(dico.lire(&clé))
-            } sinon {
-                Arf("fetchez le dico".vers())
+        funktio lue(&itse, avain: Ketju) -> Tulos<Mahdollisuus<&Ketju>, Ketju> {
+            jos olkoon Jokin(käsky) = turvaton { HAKEMISTO.viittaukseksi() } {
+                Okei(käsky.lue(&avain))
+            } muuten {
+                Virh("käskyn haku".osaksi())
             }
         }
     }
@@ -58,35 +58,33 @@ ruoste::ruoste! {
 
 ```rust
 #[légal(code_inaccessible)]
-fonction secondaire() {
-    merde!("oh non"); // for the true French experience
-    calisse!("tabarnak"); // for friends speaking fr-ca
-    oups!("fetchez la vache"); // in SFW contexts
+funktio secondaire() {
+    voi_perkele!("o-ou"); // for the true Finnish experience
+    oho!("Aattakee!"); // for friends speaking Savo
+    hups!("Haku epäonnistui"); // in SFW contexts
 }
 ```
 
 ### Other examples
 
 See the [examples](./examples/src/main.rs) to get a rough sense of the whole
-syntax. Voilà, that's it.
+syntax. Niin, that's it.
 
-## les contributions
+## Talkoot
 
-First of all, _merci beaucoup_ for considering participating to this joke, the
-French government will thank you later! Feel free to throw in a few identifiers
-here and there, and open a pull-request against the `principale` (French for
+First of all, kiitos for considering participating to this joke, the
+Finnish government will thank you later! Feel free to throw in a few identifiers
+here and there, and open a pull-request against the `alku` (Finnish for
 `main`) branch.
 
-Please don't introduce swear words, though: we will not excuse your French.
-
-## but why would you do zat
+## but why would you do dät
 
 - horsin around
 - playing with raw proc macros
 - making a bit of fun about programming languages that do this seriously,
   though I can see their utility.
 - winking at [Marcel](https://github.com/brouberol/marcel)
-- c'est chic
+- se on siistii
 
 ## Other languages
 
@@ -100,12 +98,8 @@ Please don't introduce swear words, though: we will not excuse your French.
 - Hungarian: [rozsda](https://github.com/jozsefsallai/rozsda)
 - Chinese: [xiu (锈)](https://github.com/lucifer1004/xiu)
 
-## un grand merci
-
-- [@VentGrey](https://twitter.com/VentGrey) for making a logo!
-
-## la license
+## License
 
 [License Publique Rien à Branler](http://sam.zoy.org/lprab/),
-_le_ official translation of the [WTFPL](http://www.wtfpl.net/)
+Official translation of the [WTFPL](http://www.wtfpl.net/)
 by the same author.
