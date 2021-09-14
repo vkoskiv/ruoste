@@ -25,7 +25,7 @@ Here's an example of what can be achieved with ruoste:
 
 ```rust
 ruoste::ruoste! {
-    käytä std::collections::RisuaitaKartta kuin Käsky;
+    käytä std::collections::RisuaitaKartta nimellä Käsky;
 
     piirre AvainArvo {
         funktio kirjoita(&itse, avain: Ketju, arvo: Ketju);
@@ -45,7 +45,7 @@ ruoste::ruoste! {
         }
         funktio lue(&itse, avain: Ketju) -> Tulos<Mahdollisuus<&Ketju>, Ketju> {
             jos olkoon Jokin(käsky) = turvaton { HAKEMISTO.viittaukseksi() } {
-                Okei(käsky.lue(&avain))
+                Onnistui(käsky.lue(&avain))
             } muuten {
                 Virh("käskyn haku".osaksi())
             }
@@ -97,6 +97,10 @@ here and there, and open a pull-request against the `alku` (Finnish for
 - Hindi: [zung](https://github.com/rishit-khandelwal/zung)
 - Hungarian: [rozsda](https://github.com/jozsefsallai/rozsda)
 - Chinese: [xiu (锈)](https://github.com/lucifer1004/xiu)
+
+## Kiitokset
+
+Thanks to [Joel](https://twitter.com/joeltikkanen) for the logo!
 
 ## License
 

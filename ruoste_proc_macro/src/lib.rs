@@ -5,7 +5,7 @@ fn replace_ident(ident: Ident) -> Option<TokenTree> {
 
     let new_str = match ident_str.as_str() {
         "Virh" => "Err",
-        "Okei" => "Ok",
+        "Onnistui" => "Ok",
         "Lanka" => "String",
         "RisuaitaKartta" => "HashMap",
         "Oletus" => "Default",
@@ -23,7 +23,7 @@ fn replace_ident(ident: Ident) -> Option<TokenTree> {
         "liikuta" => "move",
         "kori" => "crate",
         "saavuttamaton_koodi" => "unreachable_code",
-        "kuin" => "as",
+        "nimellä" => "as",
         "vakio" => "const",
         "piirre" => "trait",
         "turvaton" => "unsafe",
