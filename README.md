@@ -1,6 +1,6 @@
 # ruoste
 
-![](https://github.com/vkoskiv/ruoste/raw/principale/logo.jpeg)
+![](https://github.com/vkoskiv/ruoste/raw/päälinja/logo.jpeg)
 
 Aren't you tired from writing Rust programs in English? Do you like saying
 "perkele" a lot? Would you like to try something different, in an exotic and
