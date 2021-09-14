@@ -74,7 +74,7 @@ syntax. Niin, that's it.
 
 First of all, kiitos for considering participating to this joke, the
 Finnish government will thank you later! Feel free to throw in a few identifiers
-here and there, and open a pull-request against the `alku` (Finnish for
+here and there, and open a pull-request against the `päälinja` ((Sort of) Finnish for
 `main`) branch.
 
 ## but why would you do dät
