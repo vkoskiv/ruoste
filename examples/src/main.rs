@@ -1,85 +1,85 @@
 ruoste::ruoste! {
-    externe cagette ruoste;
+	ulkoinen kori ruoste;
 
-    utilisons std::collections::Dictionnaire comme Dico;
+	käytä std::collections::RisuaitaKartta nimellä Käsky;
 
-    convention CléValeur {
-        fonction écrire(&soi, clé: Chaine, valeur: Chaine);
-        fonction lire(&soi, clé: Chaine) -> Résultat<PeutÊtre<&Chaine>, Chaine>;
-    }
+	piirre AvainArvo {
+		funktio kirjoita(&itse, avain: Ketju, arvo: Ketju);
+		funktio lue(&itse, avain: Ketju) -> Mahdollisuus<&Ketju>;
+	}
 
-    statique mutable DICTIONNAIRE: PeutÊtre<Dico<Chaine, Chaine>> = Rien;
+	staattinen muuttuva HAKEMISTO: Mahdollisuus<Käsky<Ketju, Ketju>> = EiMikään;
 
-    structure Concrète;
+	rakenne Betoni;
 
-    réalisation CléValeur pour Concrète {
-        fonction écrire(&soi, clé: Chaine, valeur: Chaine) {
-            soit dico = dangereux {
-                DICTIONNAIRE.prendre_ou_insérer_avec(Défaut::défaut)
-            };
-            dico.insérer(clé, valeur);
-        }
-        fonction lire(&soi, clé: Chaine) -> Résultat<PeutÊtre<&Chaine>, Chaine> {
-            si soit Quelque(dico) = dangereux { DICTIONNAIRE.en_réf() } {
-                Bien(dico.lire(&clé))
-            } sinon {
-                Arf("fetchez le dico".vers())
-            }
-        }
-    }
+	toteutus AvainArvo kaikille Betoni {
+		funktio kirjoita(&itse, avain: Ketju, arvo: Ketju) {
+			olkoon käsky = turvaton {
+				HAKEMISTO.ota_tai_sijoita_käyttäen(Oletus::oletus)
+			};
+			käsky.sijoita(avain, arvo);
+		}
+		funktio lue(&itse, avain: Ketju) -> Tulos<Mahdollisuus<&Ketju>, Ketju> {
+			jos olkoon Jokin(käsky) = turvaton { HAKEMISTO.viittaukseksi() } {
+				Onnistui(käsky.lue(&avain))
+			} muuten {
+				Virh("käskyn haku".osaksi())
+			}
+		}
+	}
 
-    public(cagette) fonction peut_etre(i: u32) -> PeutÊtre<Résultat<u32, Chaine>> {
-        si i % 2 == 1 {
-            si i == 42 {
-                Quelque(Arf(Chaine::depuis("merde")))
-            } sinon {
-                Quelque(Bien(33))
-            }
-        } sinon {
-            Rien
-        }
-    }
+	public(kori) funktio voi_olla(i: u32) -> Mahdollisuus<Tulos<u32, Ketju>> {
+		jos i % 2 == 1 {
+			jos i == 42 {
+				Jokin(Virh(Ketju::jostakin("pilalla")))
+			} muuten {
+				Jokin(Onnistui(33))
+			}
+		} muuten {
+			EiMikään
+		}
+	}
 
-    asynchrone fonction exemple() {
-    }
+	asynkroninen funktio esimerkki() {
+	}
 
-    asynchrone fonction exemple2() {
-        exemple().attend;
-    }
+	asynkroninen funktio esimerkki2() {
+		esimerkki().odota;
+	}
 
-    fonction principale() {
-        soit mutable x = 31;
+	funktio alku() {
+		olkoon muuttuva x = 31;
 
-        selon x {
-            42 => {
-                affiche!("omelette du fromage")
-            }
-            _ => affiche!("voila")
-        }
+		täsmää x {
+			42 => {
+				tulosta!("hauki on kala")
+			}
+			_ => tulosta!("noniin!")
+		}
 
-        pour i de 0..10 {
-            soit val = boucle {
-                arrête i;
-            };
+		kaikille i sisälle 0..10 {
+			olkoon arvo = silmukka {
+				keskeytä i;
+			};
 
-            tant que x < val {
-                x += 1;
-            }
+			kunnes EiMitäänkö x < arvo {
+				x += 1;
+			}
 
-            x = si soit Quelque(resultat) = peut_etre(i) {
-                resultat.déballer()
-            } sinon {
-                12
-            };
-        }
+			x = jos olkoon Jokin(tulos) = voi_olla(i) {
+				tulos.kääri_esiin()
+			} muuten {
+				12
+			};
+		}
 
-        //secondaire();
-    }
+		//toissijainen();
+	}
 
-    #[légal(code_inaccessible)]
-    fonction secondaire() {
-        merde!("oh non"); // for the true French experience
-        calisse!("tabernacle"); // for friends speaking fr-ca
-        oups!("fetchez la vache"); // in SFW contexts
-    }
+	#[salli(saavuttamaton_koodi)]
+	funktio toissijainen() {
+		voi_perkele!("o-ou"); // for the true Finnish experience
+		oho!("Aattakee!"); // for friends speaking Savo
+		hups!("Haku epäonnistui"); // in SFW contexts
+	}
 }
