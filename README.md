@@ -2,7 +2,7 @@
 
 ![](https://github.com/vkoskiv/ruoste/raw/päälinja/logo.jpeg)
 
-Aren't you tired from writing Rust programs in English? Do you like saying
+Aren't you _väsynyt_ from writing Rust programs in English? Do you like saying
 "perkele" a lot? Would you like to try something different, in an exotic and
 funny-sounding language? Would you want to bring some Finnish touch to your
 programs?
@@ -28,8 +28,8 @@ ruoste::ruoste! {
     käytä std::collections::RisuaitaKartta nimellä Käsky;
 
     piirre AvainArvo {
-        funktio kirjoita(&itse, avain: Ketju, arvo: Ketju);
-        funktio lue(&itse, avain: Ketju) -> Mahdollisuus<&Ketju>;
+        toiminto kirjoita(&itse, avain: Ketju, arvo: Ketju);
+        toiminto lue(&itse, avain: Ketju) -> Mahdollisuus<&Ketju>;
     }
 
     staattinen muuttuva HAKEMISTO: Mahdollisuus<Käsky<Ketju, Ketju>> = EiMikään;
@@ -37,13 +37,13 @@ ruoste::ruoste! {
     rakenne Betoni;
 
     toteutus AvainArvo kaikille Betoni {
-        funktio kirjoita(&itse, avain: Ketju, arvo: Ketju) {
+        toiminto kirjoita(&itse, avain: Ketju, arvo: Ketju) {
             olkoon käsky = turvaton {
                 HAKEMISTO.ota_tai_sijoita_käyttäen(Oletus::oletus)
             };
             käsky.sijoita(avain, arvo);
         }
-        funktio lue(&itse, avain: Ketju) -> Tulos<Mahdollisuus<&Ketju>, Ketju> {
+        toiminto lue(&itse, avain: Ketju) -> Tulos<Mahdollisuus<&Ketju>, Ketju> {
             jos olkoon Jokin(käsky) = turvaton { HAKEMISTO.viittaukseksi() } {
                 Onnistui(käsky.lue(&avain))
             } muuten {
@@ -58,7 +58,7 @@ ruoste::ruoste! {
 
 ```rust
 #[salli(saavuttamaton_koodi)]
-funktio toissijainen() {
+toiminto toissijainen() {
     voi_perkele!("o-ou"); // for the true Finnish experience
     oho!("Aattakee!"); // for friends speaking Savo
     hups!("Haku epäonnistui"); // in SFW contexts
@@ -77,7 +77,7 @@ Finnish government will thank you later! Feel free to throw in a few identifiers
 here and there, and open a pull-request against the `päälinja` ((Sort of) Finnish for
 `main`) branch.
 
-## but why would you do dät
+## But whai would you do dät
 
 - horsin around
 - playing with raw proc macros
@@ -97,13 +97,25 @@ here and there, and open a pull-request against the `päälinja` ((Sort of) Finn
 - Hindi: [zung](https://github.com/rishit-khandelwal/zung)
 - Hungarian: [rozsda](https://github.com/jozsefsallai/rozsda)
 - Chinese: [xiu (锈)](https://github.com/lucifer1004/xiu)
-
+- Spanish: [oxido](https://github.com/fdschonborn/oxido)
+- Korean: [Nok (녹)](https://github.com/Alfex4936/nok)
+- Finnish: [ruoste](https://github.com/vkoskiv/ruoste)
+- Arabic: [sada](https://github.com/LAYGATOR/sada)
+- Turkish: [pas](https://github.com/ekimb/pas)
+- Vietnamese: [gỉ](https://github.com/Huy-Ngo/gir)
+- Japanese: [sabi (錆)](https://github.com/yuk1ty/sabi)
+- Danish: [rust?](https://github.com/LunaTheFoxgirl/rust-dk)
+- Marathi: [gan̄ja](https://github.com/pranavgade20/ganja)
+- Romanian: [rugină](https://github.com/aionescu/rugina)
+- Czech: [rez](https://github.com/radekvit/rez)
+- Ukrainian: [irzha](https://github.com/brokeyourbike/irzha)
+- Bulgarian: [ryzhda](https://github.com/gavadinov/ryzhda)
+- Slovak: [hrdza](https://github.com/TheMessik/hrdza)
+  
 ## Kiitokset
 
 Thanks to [Joel](https://twitter.com/joeltikkanen) for the logo!
 
-## License
+## Lisenssi
 
-[License Publique Rien à Branler](http://sam.zoy.org/lprab/),
-Official translation of the [WTFPL](http://www.wtfpl.net/)
-by the same author.
+Tee Mitä Vittua Haluat Julkinen Lisenssi, aka [WTFPL](http://www.wtfpl.net/)

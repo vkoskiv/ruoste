@@ -36,7 +36,7 @@ fn replace_ident(ident: Ident) -> Option<TokenTree> {
         "siirräntä" => "io",
         "ulkoinen" => "extern",
         "epätosi" => "false",
-        "funktio" => "fn",
+        "toiminto" => "fn",
         "loistava" => "super",
         "sijoita" => "insert",
         "ota" => "get",
