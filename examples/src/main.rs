@@ -4,8 +4,8 @@ ruoste::ruoste! {
 	käytä std::collections::RisuaitaKartta nimellä Käsky;
 
 	piirre AvainArvo {
-		funktio kirjoita(&itse, avain: Ketju, arvo: Ketju);
-		funktio lue(&itse, avain: Ketju) -> Mahdollisuus<&Ketju>;
+		toiminto kirjoita(&itse, avain: Ketju, arvo: Ketju);
+		toiminto lue(&itse, avain: Ketju) -> Mahdollisuus<&Ketju>;
 	}
 
 	staattinen muuttuva HAKEMISTO: Mahdollisuus<Käsky<Ketju, Ketju>> = EiMikään;
@@ -13,13 +13,13 @@ ruoste::ruoste! {
 	rakenne Betoni;
 
 	toteutus AvainArvo kaikille Betoni {
-		funktio kirjoita(&itse, avain: Ketju, arvo: Ketju) {
+		toiminto kirjoita(&itse, avain: Ketju, arvo: Ketju) {
 			olkoon käsky = turvaton {
 				HAKEMISTO.ota_tai_sijoita_käyttäen(Oletus::oletus)
 			};
 			käsky.sijoita(avain, arvo);
 		}
-		funktio lue(&itse, avain: Ketju) -> Tulos<Mahdollisuus<&Ketju>, Ketju> {
+		toiminto lue(&itse, avain: Ketju) -> Tulos<Mahdollisuus<&Ketju>, Ketju> {
 			jos olkoon Jokin(käsky) = turvaton { HAKEMISTO.viittaukseksi() } {
 				Onnistui(käsky.lue(&avain))
 			} muuten {
@@ -28,7 +28,7 @@ ruoste::ruoste! {
 		}
 	}
 
-	public(kori) funktio voi_olla(i: u32) -> Mahdollisuus<Tulos<u32, Ketju>> {
+	public(kori) toiminto voi_olla(i: u32) -> Mahdollisuus<Tulos<u32, Ketju>> {
 		jos i % 2 == 1 {
 			jos i == 42 {
 				Jokin(Virh(Ketju::jostakin("pilalla")))
@@ -40,14 +40,14 @@ ruoste::ruoste! {
 		}
 	}
 
-	asynkroninen funktio esimerkki() {
+	asynkroninen toiminto esimerkki() {
 	}
 
-	asynkroninen funktio esimerkki2() {
+	asynkroninen toiminto esimerkki2() {
 		esimerkki().odota;
 	}
 
-	funktio alku() {
+	toiminto alku() {
 		olkoon muuttuva x = 31;
 
 		täsmää x {
@@ -77,7 +77,7 @@ ruoste::ruoste! {
 	}
 
 	#[salli(saavuttamaton_koodi)]
-	funktio toissijainen() {
+	toiminto toissijainen() {
 		voi_perkele!("o-ou"); // for the true Finnish experience
 		oho!("Aattakee!"); // for friends speaking Savo
 		hups!("Haku epäonnistui"); // in SFW contexts
